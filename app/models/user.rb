@@ -15,11 +15,10 @@ class User < ApplicationRecord
 	before_create {self.email = email.downcase}
 	before_create {self.username = username.downcase}
 
-	class << self
+class << self
 	# Returns the hash digest of the given string.
   def digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 
@@ -27,6 +26,7 @@ class User < ApplicationRecord
 	def new_token
     SecureRandom.urlsafe_base64
   end
+end
 
 	# Remembers a user in the database for use in persistent sessions.
 	def remember
@@ -44,5 +44,4 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
-
 end
