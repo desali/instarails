@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	def index 
+	def index
 		@users = User.all
 	end
 
@@ -25,9 +25,18 @@ class UsersController < ApplicationController
 	end
 
 	def update
+	 # @user = User.find(params[:id])
+	 # if @user.update_attributes(user_params)
+		#  redirect_to @user, :notice => "User updated."
+	 # else
+		#  redirect_to @user, :alert => "Unable to update user."
+	 # end
 	end
 
 	def destroy
+		# user = User.find(params[:id])
+    # user.destroy
+    # redirect_to @user, :notice => "User deleted."
 	end
 
 	private
