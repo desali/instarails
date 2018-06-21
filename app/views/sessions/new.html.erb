@@ -1,3 +1,4 @@
+<% @title = "Create user"%>
 <% if flash[:error] %>
   <h2><%= flash[:error] %></h2>
 <% end %>
@@ -11,5 +12,5 @@
   <% end %>
   <%= f.submit "Login" %>
 
-  <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+  <p>New user? <%= link_to "Sign up now!", signup_path %></p>
 <% end %>

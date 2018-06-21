@@ -1,0 +1,23 @@
+<% @title = "Edit page"%>
+<h1>Update your profile</h1>
+
+<% if flash[:error] %>
+  <h2><%= flash[:error] %></h2>
+<% end %>
+
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "Save changes" %>
+<% end %>
