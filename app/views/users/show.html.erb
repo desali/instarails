@@ -1,8 +1,15 @@
-<h1><%= @user.username %></h1>
-<h2><%= @user.email %></h2>
+<div class="row">
+	<div class="col-md-3">
+		<h2><%= @user.username %></h2>
+		<h3><%= @user.email %></h3>
 
-<% unless @user.avatar.attachment.nil? %>
-	<%= image_tag @user.avatar %>
-<% else %>
-	<img src="https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder-300-grey.jpg">
-<% end %>
+		<% unless @user.avatar.attachment.nil? %>
+			<%= image_tag @user.avatar, class: "img-fluid" %>
+		<% else %>
+			<img src="https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder-300-grey.jpg" class="img-fluid">
+		<% end %>
+	</div>
+	<div class="col-md-9">
+		<%= render @user.posts %>
+	</div>
+</div>

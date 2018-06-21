@@ -1,11 +1,24 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string
+#  email           :string
+#  password_digest :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
 	attr_accessor :remember_token
 
 	has_secure_password
 	has_one_attached :avatar
 	has_many :posts
+	has_many :likes
 
-	validates_presence_of :email, :username
+	validates_presence_of :email, :username, :avatar
 	validates_uniqueness_of :email, :username
 	validates :password, length: {minimum: 6, maximum: 30}
 	validates_email_format_of :email, message: 'The e-mail format is not correct!'
