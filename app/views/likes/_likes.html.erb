@@ -1,5 +1,5 @@
-<% if signed_in? %>
-	<% if post.liked? %>
+<% if post.liked? %>
+	<% if signed_in? %>
 		<%= link_to unlike_path, method: :delete do %>
 			<i class="far fa-heart">
 		<% end %>
