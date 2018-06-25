@@ -4,5 +4,8 @@
 	<% end %>
 	<p><%= post.body %></p> 
 	
-	<%= link_to "Delete", post, method: :delete, data: {confirm: "U sure?"} %>
+	<%= link_to "Delete", post, method: :delete, data: {confirm: "U sure?"} if current_user?(post.user_id) %>
+
+	<%= render "likes/likes", post: post %>
+	
 </div>

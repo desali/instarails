@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 	delete "/logout", to: "sessions#destroy"
 
 	resources :posts, only: [:create, :destroy]
-	resources :likes, only: [:create]
+	# resources :likes, only: [:create]
+	post "/like", to: "likes#create"
 	delete "/unlike", to: "likes#destroy"
 end

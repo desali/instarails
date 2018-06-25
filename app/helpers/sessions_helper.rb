@@ -9,6 +9,7 @@ module SessionsHelper
     !current_user.nil?
   end
 
+<<<<<<< HEAD
   def current_user
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
@@ -20,6 +21,15 @@ module SessionsHelper
       end
     end
   end
+=======
+	def current_user?(user_id)
+		user_id == current_user.id if current_user
+	end
+
+	def current_user
+		@current_user ||= User.find_by(id: session[:user_id])
+	end
+>>>>>>> 06a881721f546ffdc46aa6405168085f646c98ec
 
   # Returns true if the given user is the current user.
   def current_user?(user)

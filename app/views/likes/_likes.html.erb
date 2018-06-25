@@ -1,14 +1,22 @@
+<<<<<<< HEAD
 <% if post.liked? %>
 	<% if signed_in? %>
 		<%= link_to unlike_path, method: :delete do %>
 			<i class="far fa-heart">
 		<% end %>
 
+=======
+<div id="like-<%= post.id %>">
+	<% if post.liked?(current_user.id) %>
+		<%= render "likes/like", post_id: post.id %>
+>>>>>>> 06a881721f546ffdc46aa6405168085f646c98ec
 	<% else %>
-		<%= link_to likes_path, remote: true do %>
-			<i class="far fa-heart">
-		<% end %>
+		<%= render "likes/unlike", post_id: post.id %>
 	<% end %>
+<<<<<<< HEAD
 <% else %>
 	<i class="far fa-heart"></i> <%= post.likes_count %>
 <% end %>
+=======
+</div>
+>>>>>>> 06a881721f546ffdc46aa6405168085f646c98ec
