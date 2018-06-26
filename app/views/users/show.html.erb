@@ -8,6 +8,7 @@
 		<% else %>
 			<img src="https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder-300-grey.jpg" class="img-fluid">
 		<% end %>
+		<%= render "relationships/follow_form", user: @user %>
 	</div>
 	<div class="col-md-9">
 		<%= render @user.posts %>

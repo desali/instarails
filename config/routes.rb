@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 	# resources :likes, only: [:create]
 	post "/like", to: "likes#create"
 	delete "/unlike", to: "likes#destroy"
+	post "/follow", to: "relationships#create"
+	delete "/unfollow", to: "relationships#destroy"
 end

@@ -1,7 +1,8 @@
 <div id="like-<%= post.id %>">
+	<% @count = post.likes.count %>
 	<% if post.liked?(current_user.id) %>
-		<%= render "likes/like", post_id: post.id %>
+		<%= render "likes/like", post_id: post.id, count: @count %>
 	<% else %>
-		<%= render "likes/unlike", post_id: post.id %>
+		<%= render "likes/unlike", post_id: post.id, count: @count %>
 	<% end %>
 </div>
